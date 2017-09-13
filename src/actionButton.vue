@@ -15,9 +15,9 @@
         methods:{
             doAction(isIncrement){
                 if(isIncrement){
-                    this.$store.state.counter++;
+                    this.$store.commit('increment');
                 }else{
-                    this.$store.state.counter--;
+                    this.$store.commit('decrement');
                 }
 //                EventBus.$emit('counterData',this.counter)
             }
