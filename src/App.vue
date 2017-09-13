@@ -3,20 +3,29 @@
         <buttons></buttons>
         <br>
         <viewcounter></viewcounter>
+        <br>
+        <anotherview></anotherview>
     </div>
 </template>
 
 <script>
     import buttons from './actionButton.vue';
     import viewcounter from './viewOutput.vue';
+    import Anotherview from './Anotherview.vue';
     export default {
         name: 'app',
         components: {
-            buttons,viewcounter
+            buttons,viewcounter,Anotherview
         },
         data () {
-            return {}
+            return {
+
+            }
+        },
+        computed:{
+
         }
+
     }
 </script>
 

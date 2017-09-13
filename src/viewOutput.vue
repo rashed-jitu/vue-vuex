@@ -8,12 +8,12 @@
     export default{
         data(){
             return {
-                
+
             }
         },
         computed: {
             updateCounter(){
-                return this.$store.state.counter;
+                return this.$store.getters.doubleCounter;
             }
         },
 //        created(){
