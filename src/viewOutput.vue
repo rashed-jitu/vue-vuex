@@ -1,20 +1,26 @@
 <template>
     <div class="current-value">
-        Current Counter: {{ counter }}
+        Current Counter: {{ updateCounter }}
     </div>
 </template>
 <script>
-    import { EventBus } from './main';
+    import {EventBus} from './main';
     export default{
         data(){
             return {
-                counter:0
+                
             }
         },
-        created(){
-            EventBus.$on('counterData',(counterData)=>{
-                this.counter = counterData
-            });
-        }
+        computed: {
+            updateCounter(){
+                return this.$store.state.counter;
+            }
+        },
+//        created(){
+//
+//            EventBus.$on('counterData',(counterData)=>{
+//                this.counter = counterData
+////            });
+//        }
     }
 </script>

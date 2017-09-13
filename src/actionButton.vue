@@ -1,7 +1,7 @@
 <template>
     <div class="action-buttons">
-        <button @click="counter++;doAction();">Increment <span>+</span></button>
-        <button @click="counter--;doAction();">Decrement <span>-</span></button>
+        <button @click="counter++;doAction(true);">Increment <span>+</span></button>
+        <button @click="counter--;doAction(false);">Decrement <span>-</span></button>
     </div>
 </template>
 <script>
@@ -13,8 +13,13 @@
             }
         },
         methods:{
-            doAction(){
-                EventBus.$emit('counterData',this.counter)
+            doAction(isIncrement){
+                if(isIncrement){
+                    this.$store.state.counter++;
+                }else{
+                    this.$store.state.counter--;
+                }
+//                EventBus.$emit('counterData',this.counter)
             }
         }
     }
