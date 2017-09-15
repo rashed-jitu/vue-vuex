@@ -5,6 +5,10 @@
         <viewcounter></viewcounter>
         <br>
         <anotherview></anotherview>
+        <br>
+        <input type="text" v-model="value">
+        <br>
+        {{ value }}
     </div>
 </template>
 
@@ -23,7 +27,14 @@
             }
         },
         computed:{
-
+            value:{
+                get(){
+                    return this.$store.getters.value;
+                },
+                set(value){
+                    this.$store.commit('updateValue',value);
+                }
+            }
         }
 
     }
